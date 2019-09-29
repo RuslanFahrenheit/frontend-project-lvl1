@@ -1,0 +1,37 @@
+{
+  "name": "another-one-brain-games",
+  "version": "1.0.0",
+  "description": "front-end project lvl 1",
+  "main": "dist/index.js",
+  "bin": {
+    "brain-games": "dist/bin/brain-games.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RuslanFahrenheit/frontend-project-lvl1.git"
+  },
+  "keywords": [
+    "brain",
+    "games"
+  ],
+  "author": "Ruslan Kim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RuslanFahrenheit/frontend-project-lvl1/issues"
+  },
+  "homepage": "https://github.com/RuslanFahrenheit/frontend-project-lvl1#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.6.2",
+    "@babel/core": "^7.6.2",
+    "@babel/node": "^7.6.2",
+    "@babel/preset-env": "^7.6.2"
+  }
+}
