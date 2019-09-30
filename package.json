@@ -1,6 +1,6 @@
 {
   "name": "another-one-brain-games",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "front-end project lvl 1",
   "main": "dist/index.js",
   "bin": {
@@ -33,5 +33,8 @@
     "@babel/core": "^7.6.2",
     "@babel/node": "^7.6.2",
     "@babel/preset-env": "^7.6.2"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.10"
   }
 }
