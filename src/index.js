@@ -22,7 +22,6 @@ export const askIfNumberIsEven = () => {
   const iter = (gameLevel) => {
     const maxGameLevels = 3;
     if (gameLevel === maxGameLevels) {
-      console.log(gameLevel);
       console.log(`Congratulations, ${userName}!`);
       return;
     }
