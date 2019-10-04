@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-import { greet, askIfNumberIsEven } from '..';
+import { askIfNumberIsEven } from '..';
 
-greet();
 askIfNumberIsEven();
