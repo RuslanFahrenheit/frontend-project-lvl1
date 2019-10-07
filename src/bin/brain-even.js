@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
-import { askIfNumberIsEven } from '..';
+import buildGame from '..';
+import even from '../games/even';
 
-askIfNumberIsEven();
+buildGame(even);

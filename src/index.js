@@ -1,42 +1,28 @@
 import readlineSync from 'readline-sync';
+import { getTask, getCorrectAnswer } from './api';
 
-export const question = (str) => readlineSync.question(str);
+const question = (str) => readlineSync.question(str);
 
-export const isEven = (n) => n % 2 === 0;
-
-export const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-
-export const getPlayerName = () => {
+export default (game) => {
   console.log('Welcome to the Brain Games!');
-  console.log('Answer "yes" if number even otherwise answer "no".');
-
   const userName = question('May I have your name? ');
-
   console.log(`Hello, ${userName}!`);
-  return userName;
-};
 
-export const askIfNumberIsEven = () => {
-  const userName = getPlayerName();
-
-  const iter = (gameLevel) => {
-    const maxGameLevels = 3;
-    if (gameLevel === maxGameLevels) {
+  const maxGameRounds = 3;
+  const iter = (gameRound) => {
+    if (gameRound === maxGameRounds) {
       console.log(`Congratulations, ${userName}!`);
       return;
     }
-
-    const minLimitValue = 1;
-    const maxLimitValue = 100;
-    const randomNumber = getRandomInt(minLimitValue, maxLimitValue);
-    console.log(`Question: ${randomNumber}`);
+    const currentRoundGame = game();
+    const task = getTask(currentRoundGame);
+    console.log(`Question: ${task}`);
 
     const answerInput = String(question('Your answer: '));
-    const correctAnswer = isEven(randomNumber) ? 'yes' : 'no';
-
+    const correctAnswer = getCorrectAnswer(currentRoundGame);
     if (answerInput === correctAnswer) {
       console.log('Correct!');
-      iter(gameLevel + 1);
+      iter(gameRound + 1);
     } else {
       console.log(`'${answerInput}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${userName}!`);
