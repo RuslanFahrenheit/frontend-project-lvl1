@@ -3,4 +3,5 @@
 import buildGame from '..';
 import even from '../games/even';
 
-buildGame(even);
+const rules = 'Answer "yes" if number even otherwise answer "no".';
+buildGame(even, rules);
