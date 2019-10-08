@@ -8,20 +8,20 @@ export default () => {
   const randomNumber2 = getRandomInt(minLimitValue, maxLimitValue);
 
   let task = null;
-  let answer = '';
+  let correctAnswer = '';
   switch (getRandomInt(0, 2)) {
     case 0:
       task = `${randomNumber1} + ${randomNumber2}`;
-      answer = `${randomNumber1 + randomNumber2}`;
+      correctAnswer = `${randomNumber1 + randomNumber2}`;
       break;
     case 1:
       task = `${randomNumber1} - ${randomNumber2}`;
-      answer = `${randomNumber1 - randomNumber2}`;
+      correctAnswer = `${randomNumber1 - randomNumber2}`;
       break;
     default:
       task = `${randomNumber1} * ${randomNumber2}`;
-      answer = `${randomNumber1 * randomNumber2}`;
+      correctAnswer = `${randomNumber1 * randomNumber2}`;
   }
 
-  return makeGame(task, answer);
+  return makeGame(task, correctAnswer);
 };

@@ -20,7 +20,7 @@ export default (game, rules) => {
     console.log(`Question: ${task}`);
 
     const answerInput = String(question('Your answer: '));
-    const correctAnswer = getCorrectAnswer(currentRoundGame);
+    const correctAnswer = String(getCorrectAnswer(currentRoundGame));
     if (answerInput === correctAnswer) {
       console.log('Correct!');
       iter(gameRound + 1);
