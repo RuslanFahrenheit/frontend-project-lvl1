@@ -5,3 +5,5 @@
 [![asciicast](https://asciinema.org/a/AEFiwiRNk4DdZ3hnxSic2ElKn.svg)](https://asciinema.org/a/AEFiwiRNk4DdZ3hnxSic2ElKn)
 ## Running Brain Calc Game
 [![asciicast](https://asciinema.org/a/F9C6qwl9IIr91a3UD6PK4MJSW.svg)](https://asciinema.org/a/F9C6qwl9IIr91a3UD6PK4MJSW)
+## Running Brain GCD(the greatest common divisor) Game
+[![asciicast](https://asciinema.org/a/2PzVWQfu4Z5WQTWIZlIs3CSsS.svg)](https://asciinema.org/a/2PzVWQfu4Z5WQTWIZlIs3CSsS)
