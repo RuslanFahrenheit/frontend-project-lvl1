@@ -1,4 +1,4 @@
-import { getRandomInt } from '../helpers';
+import getRandomInt from '../helpers/getRandomInt';
 import { makeGame } from '../api';
 
 const isEven = (n) => n % 2 === 0;
