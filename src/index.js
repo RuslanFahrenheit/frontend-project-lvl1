@@ -10,9 +10,9 @@ export default (game) => {
   const userName = question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
 
-  const maxGameRounds = 3;
+  const gameRoundsCount = 3;
   const iter = (gameRound) => {
-    if (gameRound === maxGameRounds) {
+    if (gameRound === gameRoundsCount) {
       console.log(`Congratulations, ${userName}!`);
       return;
     }
