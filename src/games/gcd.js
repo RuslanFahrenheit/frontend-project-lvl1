@@ -8,6 +8,7 @@ export default () => {
   const randomNumber2 = getRandomInt(minLimitValue, maxLimitValue);
   const task = `${randomNumber1} ${randomNumber2}`;
   const correctAnswer = gcd(randomNumber1, randomNumber2);
+  const rules = 'Find the greatest common divisor of given numbers.';
 
-  return makeGame(task, correctAnswer);
+  return makeGame(task, correctAnswer, rules);
 };

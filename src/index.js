@@ -1,10 +1,11 @@
 import readlineSync from 'readline-sync';
-import { getTask, getCorrectAnswer } from './api';
+import { getTask, getCorrectAnswer, getRules } from './api';
 
 const question = (str) => readlineSync.question(str);
 
-export default (game, rules) => {
+export default (game) => {
   console.log('Welcome to the Brain Games!');
+  const rules = getRules(game());
   console.log(rules);
   const userName = question('May I have your name? ');
   console.log(`Hello, ${userName}!`);

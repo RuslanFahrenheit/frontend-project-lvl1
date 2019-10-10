@@ -6,6 +6,7 @@ export default () => {
   const maxLimitValue = 100;
   const randomNumber1 = getRandomInt(minLimitValue, maxLimitValue);
   const randomNumber2 = getRandomInt(minLimitValue, maxLimitValue);
+  const rules = 'What is the result of the expression?';
 
   let task = null;
   let correctAnswer = '';
@@ -23,5 +24,5 @@ export default () => {
       correctAnswer = `${randomNumber1 * randomNumber2}`;
   }
 
-  return makeGame(task, correctAnswer);
+  return makeGame(task, correctAnswer, rules);
 };

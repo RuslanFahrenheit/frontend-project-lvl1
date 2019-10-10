@@ -6,6 +6,7 @@ export default () => {
   const hiddenProgressionStep = getRandomInt(1, progressionSize);
   const startStep = getRandomInt(2, 20);
   const progressionStepsDifference = getRandomInt(2, 30);
+  const rules = 'What number is missing in the progression?';
 
   const iter = (counter, currentStep) => {
     if (counter - 1 === progressionSize) {
@@ -21,5 +22,5 @@ export default () => {
   const task = iter(2, startStep);
   const correctAnswer = progressionStepsDifference;
 
-  return makeGame(task, correctAnswer);
+  return makeGame(task, correctAnswer, rules);
 };
