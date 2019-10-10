@@ -1,12 +1,14 @@
-import { isEven, getRandomInt } from '../helpers';
+import { getRandomInt } from '../helpers';
 import { makeGame } from '../api';
 
+const isEven = (n) => n % 2 === 0;
+const minLimitValue = 1;
+const maxLimitValue = 100;
+
 export default () => {
-  const minLimitValue = 1;
-  const maxLimitValue = 100;
-  const randomNumber = getRandomInt(minLimitValue, maxLimitValue);
-  const correctAnswer = isEven(randomNumber) ? 'yes' : 'no';
+  const randomValue = getRandomInt(minLimitValue, maxLimitValue);
+  const correctAnswer = isEven(randomValue) ? 'yes' : 'no';
   const rules = 'Answer "yes" if number even otherwise answer "no".';
 
-  return makeGame(randomNumber, correctAnswer, rules);
+  return makeGame(randomValue, correctAnswer, rules);
 };

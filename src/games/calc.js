@@ -1,27 +1,28 @@
 import { getRandomInt } from '../helpers';
 import { makeGame } from '../api';
 
+const minLimitValue = 1;
+const maxLimitValue = 100;
+
 export default () => {
-  const minLimitValue = 1;
-  const maxLimitValue = 100;
-  const randomNumber1 = getRandomInt(minLimitValue, maxLimitValue);
-  const randomNumber2 = getRandomInt(minLimitValue, maxLimitValue);
+  const randomValue1 = getRandomInt(minLimitValue, maxLimitValue);
+  const randomValue2 = getRandomInt(minLimitValue, maxLimitValue);
   const rules = 'What is the result of the expression?';
 
   let task = null;
   let correctAnswer = '';
   switch (getRandomInt(0, 2)) {
     case 0:
-      task = `${randomNumber1} + ${randomNumber2}`;
-      correctAnswer = `${randomNumber1 + randomNumber2}`;
+      task = `${randomValue1} + ${randomValue2}`;
+      correctAnswer = `${randomValue1 + randomValue2}`;
       break;
     case 1:
-      task = `${randomNumber1} - ${randomNumber2}`;
-      correctAnswer = `${randomNumber1 - randomNumber2}`;
+      task = `${randomValue1} - ${randomValue2}`;
+      correctAnswer = `${randomValue1 - randomValue2}`;
       break;
     default:
-      task = `${randomNumber1} * ${randomNumber2}`;
-      correctAnswer = `${randomNumber1 * randomNumber2}`;
+      task = `${randomValue1} * ${randomValue2}`;
+      correctAnswer = `${randomValue1 * randomValue2}`;
   }
 
   return makeGame(task, correctAnswer, rules);
