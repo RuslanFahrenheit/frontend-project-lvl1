@@ -1,9 +1,9 @@
-import getRandomInt from '../helpers/getRandomInt';
+import getRandomInt from '../getRandomInt';
 import { makeGame } from '../api';
 
 export default () => {
   const progressionSize = 10;
-  const hiddenProgressionStep = getRandomInt(1, progressionSize);
+  const hiddenProgressionStep = getRandomInt(2, progressionSize);
   const startStep = getRandomInt(2, 20);
   const progressionStepsDifference = getRandomInt(2, 30);
   const rules = 'What number is missing in the progression?';

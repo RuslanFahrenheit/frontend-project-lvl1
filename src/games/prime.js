@@ -1,4 +1,4 @@
-import getRandomInt from '../helpers/getRandomInt';
+import getRandomInt from '../getRandomInt';
 import { makeGame } from '../api';
 
 export const isPrime = (n) => {
