@@ -20,7 +20,7 @@ export default () => {
   };
 
   const task = iter(2, startStep);
-  const correctAnswer = progressionStepsDifference;
+  const correctAnswer = startStep + progressionStepsDifference * (hiddenProgressionStep - 1);
 
   return makeGame(task, correctAnswer, rules);
 };
