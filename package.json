@@ -1,6 +1,6 @@
 {
   "name": "another-one-brain-games",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "description": "front-end project lvl 1",
   "bin": {
     "brain-even": "dist/bin/brain-even.js",

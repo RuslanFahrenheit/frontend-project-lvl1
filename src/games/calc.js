@@ -3,27 +3,31 @@ import { makeGame } from '../api';
 
 const minLimitValue = 1;
 const maxLimitValue = 100;
+const operatorsList = '+-*';
+const operatorsListLength = operatorsList.length;
+const createCorrectAnswer = (a, b, operator) => {
+  switch (operator) {
+    case '+':
+      return a + b;
+    case '-':
+      return a - b;
+    case '*':
+      return a * b;
+    default:
+      break;
+  }
+  return null;
+};
+
 
 export default () => {
   const randomValue1 = getRandomInt(minLimitValue, maxLimitValue);
   const randomValue2 = getRandomInt(minLimitValue, maxLimitValue);
   const rules = 'What is the result of the expression?';
-
-  let task = null;
-  let correctAnswer = '';
-  switch (getRandomInt(0, 2)) {
-    case 0:
-      task = `${randomValue1} + ${randomValue2}`;
-      correctAnswer = `${randomValue1 + randomValue2}`;
-      break;
-    case 1:
-      task = `${randomValue1} - ${randomValue2}`;
-      correctAnswer = `${randomValue1 - randomValue2}`;
-      break;
-    default:
-      task = `${randomValue1} * ${randomValue2}`;
-      correctAnswer = `${randomValue1 * randomValue2}`;
-  }
+  const operatorIndex = getRandomInt(0, operatorsListLength - 1);
+  const operator = operatorsList[operatorIndex];
+  const task = `${randomValue1} ${operator} ${randomValue2}`;
+  const correctAnswer = createCorrectAnswer(randomValue1, randomValue2, operator);
 
   return makeGame(task, correctAnswer, rules);
 };
