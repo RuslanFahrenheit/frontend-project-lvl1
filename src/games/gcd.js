@@ -1,7 +1,7 @@
 import getRandomInt from '../helpers/getRandomInt';
 import { makeGame } from '../api';
 
-export const gcd = (a, b) => {
+const gcd = (a, b) => {
   if (b === 0) {
     return Math.abs(a);
   }
