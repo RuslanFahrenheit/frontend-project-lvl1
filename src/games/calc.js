@@ -4,8 +4,7 @@ import buildGame from '..';
 
 const minLimitValue = 1;
 const maxLimitValue = 100;
-const operatorsList = '+-*';
-const operatorsListLength = operatorsList.length;
+const operators = '+-*';
 const createCorrectAnswer = (a, b, operator) => {
   switch (operator) {
     case '+':
@@ -24,8 +23,7 @@ const description = 'What is the result of the expression?';
 const createGameData = () => {
   const randomValue1 = getRandomInt(minLimitValue, maxLimitValue);
   const randomValue2 = getRandomInt(minLimitValue, maxLimitValue);
-  const operatorIndex = getRandomInt(0, operatorsListLength - 1);
-  const operator = operatorsList[operatorIndex];
+  const operator = operators[getRandomInt(0, operators.length - 1)];
   const task = `${randomValue1} ${operator} ${randomValue2}`;
   const correctAnswer = createCorrectAnswer(randomValue1, randomValue2, operator);
 
