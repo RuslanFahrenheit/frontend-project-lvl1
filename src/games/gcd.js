@@ -1,5 +1,6 @@
 import getRandomInt from '../getRandomInt';
 import { makeGame } from '../api';
+import buildGame from '..';
 
 const gcd = (a, b) => {
   if (b === 0) {
@@ -10,7 +11,7 @@ const gcd = (a, b) => {
 const minLimitValue = 1;
 const maxLimitValue = 100;
 
-export default () => {
+const createGameData = () => {
   const randomValue1 = getRandomInt(minLimitValue, maxLimitValue);
   const randomValue2 = getRandomInt(minLimitValue, maxLimitValue);
   const task = `${randomValue1} ${randomValue2}`;
@@ -19,3 +20,5 @@ export default () => {
 
   return makeGame(task, correctAnswer, rules);
 };
+
+export default () => buildGame(createGameData);

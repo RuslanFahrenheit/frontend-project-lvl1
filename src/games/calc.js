@@ -1,5 +1,6 @@
 import getRandomInt from '../getRandomInt';
 import { makeGame } from '../api';
+import buildGame from '..';
 
 const minLimitValue = 1;
 const maxLimitValue = 100;
@@ -20,7 +21,7 @@ const createCorrectAnswer = (a, b, operator) => {
 };
 
 
-export default () => {
+const createGameData = () => {
   const randomValue1 = getRandomInt(minLimitValue, maxLimitValue);
   const randomValue2 = getRandomInt(minLimitValue, maxLimitValue);
   const rules = 'What is the result of the expression?';
@@ -31,3 +32,5 @@ export default () => {
 
   return makeGame(task, correctAnswer, rules);
 };
+
+export default () => buildGame(createGameData);

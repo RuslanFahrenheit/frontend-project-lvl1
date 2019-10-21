@@ -1,7 +1,8 @@
 import getRandomInt from '../getRandomInt';
 import { makeGame } from '../api';
+import buildGame from '..';
 
-export default () => {
+export const createGameData = () => {
   const progressionSize = 10;
   const hiddenProgressionStep = getRandomInt(2, progressionSize);
   const startStep = getRandomInt(2, 20);
@@ -24,3 +25,5 @@ export default () => {
 
   return makeGame(task, correctAnswer, rules);
 };
+
+export default () => buildGame(createGameData);
