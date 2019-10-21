@@ -7,11 +7,11 @@ const minLimitValue = 1;
 const maxLimitValue = 100;
 
 const createGameData = () => {
-  const randomValue = getRandomInt(minLimitValue, maxLimitValue);
-  const correctAnswer = isEven(randomValue) ? 'yes' : 'no';
+  const task = getRandomInt(minLimitValue, maxLimitValue);
+  const correctAnswer = isEven(task) ? 'yes' : 'no';
   const rules = 'Answer "yes" if number even otherwise answer "no".';
 
-  return makeGame(randomValue, correctAnswer, rules);
+  return makeGame(task, correctAnswer, rules);
 };
 
 export default () => buildGame(createGameData);
