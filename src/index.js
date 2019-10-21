@@ -29,5 +29,5 @@ export default (game) => {
     }
   };
 
-  return iter(0);
+  iter(0);
 };
