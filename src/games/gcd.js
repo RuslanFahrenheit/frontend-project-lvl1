@@ -2,11 +2,11 @@ import getRandomInt from '../getRandomInt';
 import { makeGame } from '../api';
 import buildGame from '..';
 
-const gcd = (a, b) => {
+const getGcd = (a, b) => {
   if (b === 0) {
     return Math.abs(a);
   }
-  return gcd(b, a % b);
+  return getGcd(b, a % b);
 };
 const minLimitValue = 1;
 const maxLimitValue = 100;
@@ -16,7 +16,7 @@ const createGameData = () => {
   const randomValue1 = getRandomInt(minLimitValue, maxLimitValue);
   const randomValue2 = getRandomInt(minLimitValue, maxLimitValue);
   const task = `${randomValue1} ${randomValue2}`;
-  const correctAnswer = gcd(randomValue1, randomValue2);
+  const correctAnswer = getGcd(randomValue1, randomValue2);
 
   return makeGame(task, correctAnswer, description);
 };
