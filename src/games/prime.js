@@ -17,13 +17,13 @@ export const isPrime = (n) => {
 };
 const minLimitValue = 1;
 const maxLimitValue = 100;
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 export const createGameData = () => {
   const task = getRandomInt(minLimitValue, maxLimitValue);
   const correctAnswer = isPrime(task) ? 'yes' : 'no';
-  const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-  return makeGame(task, correctAnswer, rules);
+  return makeGame(task, correctAnswer, description);
 };
 
 export default () => buildGame(createGameData);

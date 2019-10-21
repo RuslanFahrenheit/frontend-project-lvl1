@@ -19,18 +19,17 @@ const createCorrectAnswer = (a, b, operator) => {
   }
   return null;
 };
-
+const description = 'What is the result of the expression?';
 
 const createGameData = () => {
   const randomValue1 = getRandomInt(minLimitValue, maxLimitValue);
   const randomValue2 = getRandomInt(minLimitValue, maxLimitValue);
-  const rules = 'What is the result of the expression?';
   const operatorIndex = getRandomInt(0, operatorsListLength - 1);
   const operator = operatorsList[operatorIndex];
   const task = `${randomValue1} ${operator} ${randomValue2}`;
   const correctAnswer = createCorrectAnswer(randomValue1, randomValue2, operator);
 
-  return makeGame(task, correctAnswer, rules);
+  return makeGame(task, correctAnswer, description);
 };
 
 export default () => buildGame(createGameData);
