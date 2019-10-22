@@ -2,10 +2,10 @@ import getRandomInt from '../getRandomInt';
 import { makeGame } from '../api';
 import buildGame from '..';
 
+const progressionSize = 10;
 const description = 'What number is missing in the progression?';
 
 export const createGameData = () => {
-  const progressionSize = 10;
   const hiddenElementIndex = getRandomInt(2, progressionSize);
   const startStep = getRandomInt(2, 20);
   const progressionStepsDifference = getRandomInt(2, 30);
@@ -24,7 +24,7 @@ export const createGameData = () => {
   const task = iter(2, startStep);
   const correctAnswer = startStep + progressionStepsDifference * (hiddenElementIndex - 1);
 
-  return makeGame(task, correctAnswer, description);
+  return makeGame(task, correctAnswer);
 };
 
-export default () => buildGame(createGameData);
+export default () => buildGame(createGameData, description);

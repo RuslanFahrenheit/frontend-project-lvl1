@@ -1,14 +1,14 @@
 import readlineSync from 'readline-sync';
-import { getTask, getCorrectAnswer, getRules } from './api';
+import { getTask, getCorrectAnswer } from './api';
 
-export default (game) => {
+const gameRoundsCount = 3;
+
+export default (game, description) => {
   console.log('Welcome to the Brain Games!');
-  const rules = getRules(game());
-  console.log(rules);
+  console.log(description);
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
 
-  const gameRoundsCount = 3;
   const iter = (gameRound) => {
     if (gameRound === gameRoundsCount) {
       console.log(`Congratulations, ${userName}!`);

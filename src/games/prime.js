@@ -2,7 +2,7 @@ import getRandomInt from '../getRandomInt';
 import { makeGame } from '../api';
 import buildGame from '..';
 
-export const isPrime = (n) => {
+const isPrime = (n) => {
   if (n < 2) {
     return false;
   }
@@ -15,15 +15,15 @@ export const isPrime = (n) => {
 
   return true;
 };
-const minLimitValue = 1;
-const maxLimitValue = 100;
+const min = 1;
+const max = 100;
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-export const createGameData = () => {
-  const task = getRandomInt(minLimitValue, maxLimitValue);
+const createGameData = () => {
+  const task = getRandomInt(min, max);
   const correctAnswer = isPrime(task) ? 'yes' : 'no';
 
-  return makeGame(task, correctAnswer, description);
+  return makeGame(task, correctAnswer);
 };
 
-export default () => buildGame(createGameData);
+export default () => buildGame(createGameData, description);

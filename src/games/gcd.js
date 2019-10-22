@@ -8,17 +8,17 @@ const getGcd = (a, b) => {
   }
   return getGcd(b, a % b);
 };
-const minLimitValue = 1;
-const maxLimitValue = 100;
+const min = 1;
+const mix = 100;
 const description = 'Find the greatest common divisor of given numbers.';
 
 const createGameData = () => {
-  const randomValue1 = getRandomInt(minLimitValue, maxLimitValue);
-  const randomValue2 = getRandomInt(minLimitValue, maxLimitValue);
+  const randomValue1 = getRandomInt(min, mix);
+  const randomValue2 = getRandomInt(min, mix);
   const task = `${randomValue1} ${randomValue2}`;
   const correctAnswer = getGcd(randomValue1, randomValue2);
 
-  return makeGame(task, correctAnswer, description);
+  return makeGame(task, correctAnswer);
 };
 
-export default () => buildGame(createGameData);
+export default () => buildGame(createGameData, description);
