@@ -5,10 +5,10 @@ import {
   toString,
 } from '@hexlet/pairs';
 
-export const makeGame = (task, answer, description) => cons(cons(task, answer), description);
+export const makeGame = (task, answer) => cons(task, answer);
 
-export const getTask = (game) => car(car(game));
+export const getTask = (game) => car(game);
 
-export const getCorrectAnswer = (game) => cdr(car(game));
+export const getCorrectAnswer = (game) => cdr(game);
 
 export const gameToString = (game) => toString(game);
