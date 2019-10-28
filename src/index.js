@@ -3,7 +3,7 @@ import { getTask, getCorrectAnswer } from './api';
 
 const gameRoundsCount = 3;
 
-export default (game, description) => {
+export default (runGame, description) => {
   console.log('Welcome to the Brain Games!');
   console.log(description);
   const userName = readlineSync.question('May I have your name? ');
@@ -14,7 +14,7 @@ export default (game, description) => {
       console.log(`Congratulations, ${userName}!`);
       return;
     }
-    const currentRoundGame = game();
+    const currentRoundGame = runGame();
     const task = getTask(currentRoundGame);
     console.log(`Question: ${task}`);
 
